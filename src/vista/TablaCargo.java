@@ -150,9 +150,8 @@ public class TablaCargo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txt_Serial_Maquina, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
-                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txt_Id_Maquina, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
-                        .addComponent(txt_Nombre_Maquina)))
+                    .addComponent(txt_Id_Maquina, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+                    .addComponent(txt_Nombre_Maquina))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
@@ -293,7 +292,7 @@ public class TablaCargo extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Nombre", "Fecha Inicio", "Fecha Fin", "Estado", "ID maquina"
+                "ID", "Nombre", "ID maquina", "Maquina"
             }
         ));
         tb_Motor.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1531,20 +1530,18 @@ public class TablaCargo extends javax.swing.JFrame {
     }
     
         void listarMotor(){
-        String sql = "select * from motor";
+        String sql = "SELECT motor.Id_Motor, motor.Nombre_Motor, motor.Id_Maquina, maquina.Nombre_Maquina from motor INNER JOIN maquina on motor.Id_Maquina = maquina.Id_Maquina";
         try{
             cn = con.getConnection();
             st = cn.createStatement();
             rs = st.executeQuery(sql);
-            Object[]persona = new Object[6];
+            Object[]persona = new Object[4];
             modelo = (DefaultTableModel)tb_Motor.getModel();
             while (rs.next()){
                 persona[0]= rs.getString("Id_Motor");
                 persona[1] = rs.getString("Nombre_Motor");
-                persona[2] = rs.getString("Fecha_Inicio_Motor");
-                persona[3] = rs.getString("Fecha_Fin_Motor");
-                persona[4] = rs.getString("Estado_Motor");
-                persona[5] = rs.getString("Id_Maquina");
+                persona[2] = rs.getString("Id_Maquina");
+                persona[3] = rs.getString("Nombre_Maquina");
                 modelo.addRow(persona);
             }
             tb_Motor.setModel(modelo);

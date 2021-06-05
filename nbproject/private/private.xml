@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/daniel/Documents/NetBeansProjects/Proyecto_Hilera/src/config/Conexion.java</file>
-            <file>file:/C:/Users/daniel/Documents/NetBeansProjects/Proyecto_Hilera/src/vista/Formularios.java</file>
-            <file>file:/C:/Users/daniel/Documents/NetBeansProjects/Proyecto_Hilera/src/vista/TablaCargo.java</file>
+            <file>file:/C:/Users/daniel/Documents/ProyectoHilera/src/clases/clase_maquina.java</file>
+            <file>file:/C:/Users/daniel/Documents/ProyectoHilera/src/clases/clase_cargo.java</file>
+            <file>file:/C:/Users/daniel/Documents/ProyectoHilera/src/clases/clase_validar_estado.java</file>
+            <file>file:/C:/Users/daniel/Documents/ProyectoHilera/src/vista/Formularios.java</file>
         </group>
     </open-files>
 </project-private>
